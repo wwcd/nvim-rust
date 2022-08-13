@@ -25,6 +25,14 @@ M.rustinstall = function()
   end
 end
 
+M.rustbuild = function()
+  vim.cmd('vs term://cargo build|startinsert')
+end
+
+M.rustrun = function()
+  vim.cmd('vs term://cargo run|startinsert')
+end
+
 M.setup = function(_)
   vim.api.nvim_create_user_command("RustInstall", M.rustinstall, {})
   vim.api.nvim_create_autocmd({'BufWritePre'}, {pattern={'*.rs'}, callback=M.rustformat})
