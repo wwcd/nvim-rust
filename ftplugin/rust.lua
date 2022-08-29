@@ -1,4 +1,4 @@
 local rust = require('nvim-rust')
 
-vim.api.nvim_create_user_command("RustBuild", rust.rustbuild, {})
-vim.api.nvim_create_user_command("RustRun", rust.rustrun, {})
+vim.api.nvim_buf_create_user_command(0, "RustBuild", rust.build, {})
+vim.api.nvim_buf_create_user_command(0, "RustRun", rust.run, {})
